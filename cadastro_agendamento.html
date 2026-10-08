@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Turma noite">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Recursos de acessibilidade para baixa visão -->
+    <nav class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
+        <span class="rotulo-acessibilidade">Acessibilidade:</span>
+        <button type="button" id="fonte-menor" aria-label="Diminuir tamanho da visualização">A−</button>
+        <button type="button" id="fonte-maior" aria-label="Aumentar tamanho da visualização">A+</button>
+        <button type="button" id="fonte-padrao">Tamanho normal</button>
+        <button type="button" id="alternar-contraste" aria-pressed="false">Alto contraste</button>
+    </nav>
+
+
+    <header>
+
+        <h2>AGENDAMENTO</h2>
+
+        <ul class="menu">
+            <li>
+                <a href="index.html">PÁGINA INICIAL</a>
+            </li>
+        </ul>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <fieldset id="areaFormulario">
+
+            <legend>
+                <strong>DADOS DO AGENDAMENTO</strong>
+            </legend>
+
+            <form id="formAgendamento">
+
+                <!-- NOME -->
+
+                <label for="nome">
+                    <strong>Nome do Cliente:</strong>
+                </label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome completo"
+                    required
+                >
+
+                <br><br>
+
+
+                <!-- PROFISSIONAL -->
+
+                <label for="profissional">
+                    <strong>Profissional Preferido:</strong>
+                </label>
+
+                <br>
+
+                <select
+                    id="profissional"
+                    name="profissional"
+                    required
+                >
+
+                    <option value="">
+                        Selecione um profissional
+                    </option>
+
+                    <option value="Carlos (Cabeleireiro)">
+                        Carlos (Cabeleireiro)
+                    </option>
+
+                    <option value="Mariana (Cabeleireira)">
+                        Mariana (Cabeleireira)
+                    </option>
+
+                    <option value="Roberto (Barbeiro)">
+                        Roberto (Barbeiro)
+                    </option>
+
+                    <option value="Ana (Esteticista)">
+                        Ana (Esteticista)
+                    </option>
+
+                    <option value="Indiferente">
+                        Indiferente
+                    </option>
+
+                </select>
+
+                <br><br>
+
+
+                <!-- SEXO -->
+
+                <label>
+                    <strong>Sexo:</strong>
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="sexo"
+                        value="Masculino"
+                        required
+                    >
+                    Masculino
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="sexo"
+                        value="Feminino"
+                    >
+                    Feminino
+                </label>
+
+                <br><br>
+
+
+                <!-- SERVIÇOS -->
+
+                <label>
+                    <strong>Serviços Desejados:</strong>
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="servicos"
+                        class="serv"
+                        value="Corte de Cabelo"
+                        data-preco="35"
+                    >
+                    Corte de Cabelo - R$ 35,00
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="servicos"
+                        class="serv"
+                        value="Barba"
+                        data-preco="25"
+                    >
+                    Barba - R$ 25,00
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="servicos"
+                        class="serv"
+                        value="Coloração"
+                        data-preco="80"
+                    >
+                    Coloração - R$ 80,00
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="servicos"
+                        class="serv"
+                        value="Escova / Hidratação"
+                        data-preco="60"
+                    >
+                    Escova / Hidratação - R$ 60,00
+                </label>
+
+                <br>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="servicos"
+                        class="serv"
+                        value="Manicure"
+                        data-preco="30"
+                    >
+                    Manicure - R$ 30,00
+                </label>
+
+                <br><br>
+
+
+                <!-- DATA -->
+
+                <label for="data">
+                    <strong>Data do atendimento:</strong>
+                </label>
+
+                <br>
+
+                <input
+                    type="date"
+                    id="data"
+                    name="data"
+                    required
+                >
+
+                <br><br>
+
+
+                <!-- HORÁRIO -->
+
+                <label for="horario">
+                    <strong>Horário:</strong>
+                </label>
+
+                <br>
+
+                <input
+                    type="time"
+                    id="horario"
+                    name="horario"
+                    min="09:00"
+                    max="17:00"
+                    required
+                >
+
+                <br><br>
+
+
+                <button
+                    class="botao"
+                    type="submit"
+                >
+                    CONTINUAR
+                </button>
+
+            </form>
+
+            <div
+                id="resultado"
+                class="resultado"
+            ></div>
+
+        </fieldset>
+
+
+        <!-- =================================================
+             TELA DE CONFIRMAÇÃO
+        ================================================== -->
+
+        <section
+            id="areaConfirmacao"
+            class="confirmacao"
+            style="display: none;"
+        >
+
+            <h2>🔎 Confira seu agendamento</h2>
+
+            <p>
+                Antes de confirmar, verifique se todos os dados estão corretos.
+            </p>
+
+            <div class="resumo">
+
+                <p>
+                    <strong>Cliente:</strong>
+                    <span id="confirmNome"></span>
+                </p>
+
+                <p>
+                    <strong>Profissional:</strong>
+                    <span id="confirmProfissional"></span>
+                </p>
+
+                <p>
+                    <strong>Sexo:</strong>
+                    <span id="confirmSexo"></span>
+                </p>
+
+                <p>
+                    <strong>Serviços:</strong>
+                    <span id="confirmServicos"></span>
+                </p>
+
+                <p>
+                    <strong>Data:</strong>
+                    <span id="confirmData"></span>
+                </p>
+
+                <p>
+                    <strong>Horário:</strong>
+                    <span id="confirmHorario"></span>
+                </p>
+
+                <p class="total">
+                    <strong>Valor total:</strong>
+                    <span id="confirmTotal"></span>
+                </p>
+
+            </div>
+
+
+            <div class="botoesConfirmacao">
+
+                <button
+                    type="button"
+                    class="botao"
+                    id="btnVoltar"
+                >
+                    ← VOLTAR
+                </button>
+
+                <button
+                    type="button"
+                    class="botao"
+                    id="btnConfirmar"
+                >
+                    ✓ CONFIRMAR AGENDAMENTO
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/salao.js"></script>
+
+    <script src="js/acessibilidade.js"></script>
+</body>
+
+</html>

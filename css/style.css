@@ -1,0 +1,398 @@
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+    color: #222;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+header {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0 0 15px 0;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #555;
+}
+
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.conteudo {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+#banner {
+    display: block;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+h3 {
+    margin-top: 25px;
+    color: #333;
+}
+
+
+/* =====================================================
+   LISTA DE SERVIÇOS
+===================================================== */
+
+#servicos ul {
+    padding-left: 25px;
+}
+
+#servicos li {
+    margin-bottom: 8px;
+}
+
+
+/* =====================================================
+   TABELA
+===================================================== */
+
+.tabela-horario {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.tabela-horario th, .tabela-horario td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabela-horario th {
+    background: #222;
+    color: white;
+}
+
+/* =====================================================
+   FORMULÁRIOS
+===================================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #555;
+}
+
+/* =====================================================
+   RADIO E CHECKBOX
+===================================================== */
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.botao {
+    display: inline-block;
+    background: #222;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.botao:hover {
+    background: #444;
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   FIELDSET
+===================================================== */
+
+fieldset {
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+legend {
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+/* =====================================================
+   RESULTADO
+===================================================== */
+
+.resultado {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.resultado.erro {
+    background: #ffdede;
+    color: #a00000;
+}
+
+
+/* =====================================================
+   COMPROVANTE
+===================================================== */
+
+.comprovante {
+    background: white;
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.comprovante h1, .comprovante h2 {
+    text-align: center;
+}
+
+.comprovante p {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.linha {
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
+
+/* =====================================================
+   CONFIRMAÇÃO
+===================================================== */
+.confirmado {
+    margin-top: 25px;
+    padding: 15px;
+    text-align: center;
+    background: #e5f8e5;
+    color: #167016;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   AÇÕES DO COMPROVANTE
+===================================================== */
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 600px) {
+    main {
+        width: 95%;
+    }
+
+    .conteudo, fieldset, .comprovante {
+        padding: 18px;
+    }
+
+    .tabela-horario {
+        font-size: 13px;
+    }
+    .tabela-horario th, .tabela-horario td {
+        padding: 8px;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* =====================================================
+   IMPRESSÃO
+===================================================== */
+
+@media print {
+
+    body {
+        background: white;
+    }
+    .acoes {
+        display: none;
+    }
+    .comprovante {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+/* Recursos de acessibilidade: contraste, foco e controles de ampliação */
+.barra-acessibilidade { position:relative; z-index:100; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; padding:10px; background:#fff; color:#222; border-bottom:2px solid #555; font-family:Arial,sans-serif; }
+.barra-acessibilidade button { font:inherit; font-size:15px; font-weight:700; color:#fff; background:#65305b; border:2px solid #65305b; border-radius:6px; padding:9px 12px; cursor:pointer; }
+.barra-acessibilidade button:hover { background:#451b3d; }
+:focus-visible { outline:3px solid #e08b00 !important; outline-offset:3px; }
+/* zoom redimensiona inclusive textos definidos em px no CSS original. */
+body { zoom:var(--escala-acessibilidade,1); }
+body.modo-alto-contraste, body.modo-alto-contraste main, body.modo-alto-contraste header, body.modo-alto-contraste footer,
+body.modo-alto-contraste section, body.modo-alto-contraste article, body.modo-alto-contraste fieldset,
+body.modo-alto-contraste .conteudo, body.modo-alto-contraste .comprovante,
+body.modo-alto-contraste .barra-acessibilidade { background:#000 !important; color:#fff !important; box-shadow:none !important; }
+body.modo-alto-contraste :is(h1,h2,h3,h4,p,span,label,legend,strong,li,td,th,div) { color:#fff !important; }
+body.modo-alto-contraste a { color:#ffff00 !important; text-decoration:underline !important; }
+body.modo-alto-contraste :is(button,input[type="submit"],input[type="button"]) { background:#ffff00 !important; color:#000 !important; border:2px solid #fff !important; }
+body.modo-alto-contraste :is(input,select,textarea) { background:#fff !important; color:#000 !important; border:2px solid #ffff00 !important; }
+body.modo-alto-contraste :is(table,td,th) { border-color:#fff !important; }
+@media print { .barra-acessibilidade { display:none !important; } body { zoom:1 !important; } }
+
+/* Identidade visual do protótipo Salão Estilo */
+:root { --rosa-claro:#F8E8EE; --rosa-escuro:#9B426B; --rosa-texto:#70304D; }
+body { background:var(--rosa-claro); color:#35232e; }
+header, footer { background:var(--rosa-escuro); }
+header h2 { letter-spacing:.07em; }
+.menu a:hover, .menu a:focus-visible { background:#70304D; }
+.conteudo, fieldset, .comprovante { border-radius:14px; }
+h1,h2,h3,legend { color:var(--rosa-texto); }
+header h2,footer h2 { color:#fff; }
+.tabela-horario th { background:var(--rosa-escuro); }
+.botao,button[type=submit],.acoes button { background:var(--rosa-escuro); color:#fff; }
+.hero-salao { position:relative; overflow:hidden; border-radius:16px; margin-bottom:20px; background:#fff; }
+.hero-salao #banner { margin:0; border-radius:0; max-height:340px; }
+.hero-texto { padding:22px; text-align:center; }
+.hero-texto h1 { margin:0 0 8px; color:var(--rosa-texto); }
+.hero-texto p { margin:0 0 20px; }
+.botao-destaque { display:inline-block; padding:13px 28px; background:var(--rosa-escuro); color:white; border-radius:8px; font-weight:bold; text-decoration:none; }
+.botao-destaque:hover { background:#70304D; }
+.grade-servicos { display:grid; grid-template-columns:repeat(auto-fit,minmax(135px,1fr)); gap:14px; margin:18px 0 28px; }
+.cartao-servico { display:flex; align-items:center; text-align:center; flex-direction:column; gap:6px; padding:20px 10px; border:1px solid #e9cbd7; border-radius:12px; background:#fff7fa; }
+.icone-servico { font-size:2rem; }
+.cartao-servico strong { color:var(--rosa-texto); }
+.cartao-servico small { color:#5d4753; }
+.grade-profissionais { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:18px 0; }
+.cartao-profissional { display:flex; align-items:center; flex-direction:column; gap:10px; padding:16px 5px; background:#fff7fa; border-radius:12px; color:var(--rosa-texto); }
+.avatar-profissional { display:grid; place-items:center; width:72px; height:72px; border-radius:50%; background:#9B426B; color:#fff; font-size:2rem; font-weight:bold; }
+.nota-imagens { font-size:.85rem; color:#68545e; }
+@media(max-width:600px){ .grade-profissionais { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+body.modo-alto-contraste .cartao-servico,body.modo-alto-contraste .cartao-profissional,body.modo-alto-contraste .hero-salao,body.modo-alto-contraste .hero-texto {background:#000!important;color:#fff!important;}
+body.modo-alto-contraste .cartao-servico small,body.modo-alto-contraste .nota-imagens {color:#fff!important;}
+
+/* Fotografias originais fornecidas para o projeto Canva */
+.foto-servico { width:100%; height:138px; object-fit:cover; border-radius:9px; display:block; margin-bottom:7px; }
+.cartao-servico { padding:10px 10px 16px; overflow:hidden; }
+.foto-profissional { width:104px; height:104px; object-fit:cover; object-position:center 25%; border-radius:50%; border:3px solid #e9cbd7; display:block; }
+.cartao-profissional { text-align:center; }
+@media(max-width:600px){.foto-servico{height:120px}.foto-profissional{width:92px;height:92px}}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Turma noite">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comprovante de Agendamento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Recursos de acessibilidade para baixa visão -->
+    <nav class="barra-acessibilidade" aria-label="Ferramentas de acessibilidade">
+        <span class="rotulo-acessibilidade">Acessibilidade:</span>
+        <button type="button" id="fonte-menor" aria-label="Diminuir tamanho da visualização">A−</button>
+        <button type="button" id="fonte-maior" aria-label="Aumentar tamanho da visualização">A+</button>
+        <button type="button" id="fonte-padrao">Tamanho normal</button>
+        <button type="button" id="alternar-contraste" aria-pressed="false">Alto contraste</button>
+    </nav>
+
+
+    <main>
+
+        <div
+            id="resultado"
+            class="comprovante"
+        >
+
+            <h1>✂️ Salão Estilo</h1>
+
+            <h2>Comprovante de Agendamento</h2>
+
+            <div class="linha"></div>
+
+
+            <div class="confirmado">
+                ✓ AGENDAMENTO CONFIRMADO
+            </div>
+
+
+            <p>
+                <strong>Número do Agendamento:</strong>
+                <span id="numeroAgendamento"></span>
+            </p>
+
+
+            <p>
+                <strong>Cliente:</strong>
+                <span id="nomeCliente"></span>
+            </p>
+
+
+            <p>
+                <strong>Profissional:</strong>
+                <span id="profissional"></span>
+            </p>
+
+
+            <p>
+                <strong>Sexo:</strong>
+                <span id="sexoCliente"></span>
+            </p>
+
+
+            <p>
+                <strong>Serviços:</strong>
+                <span id="listaServicos"></span>
+            </p>
+
+
+            <p>
+                <strong>Data:</strong>
+                <span id="dataAtendimento"></span>
+            </p>
+
+
+            <p>
+                <strong>Horário:</strong>
+                <span id="horarioAtendimento"></span>
+            </p>
+
+
+            <p>
+                <strong>Valor total:</strong>
+                <span id="valorTotal"></span>
+            </p>
+
+
+            <p>
+                <strong>Status:</strong>
+                <span id="status"></span>
+            </p>
+
+
+            <div class="acoes">
+
+                <button
+                    class="botao"
+                    onclick="window.print()"
+                >
+                    🖨️ IMPRIMIR
+                </button>
+
+
+                <a
+                    href="cadastro_agendamento.html"
+                    class="botao"
+                >
+                    NOVO AGENDAMENTO
+                </a>
+
+
+                <a
+                    href="index.html"
+                    class="botao"
+                >
+                    PÁGINA INICIAL
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        // ==============================================
+        // RECUPERAR AGENDAMENTO
+        // ==============================================
+
+        const agendamento =
+            JSON.parse(
+                localStorage.getItem(
+                    "agendamento"
+                )
+            );
+
+
+        // ==============================================
+        // VERIFICAR SE EXISTE AGENDAMENTO
+        // ==============================================
+
+        if (!agendamento) {
+
+            document.getElementById(
+                "resultado"
+            ).innerHTML = `
+
+                <h2>
+                    Nenhum agendamento encontrado.
+                </h2>
+
+                <p>
+                    Faça um novo agendamento para
+                    gerar seu comprovante.
+                </p>
+
+                <a
+                    href="cadastro_agendamento.html"
+                    class="botao"
+                >
+                    FAZER AGENDAMENTO
+                </a>
+
+            `;
+
+        } else {
+
+
+            // ==========================================
+            // PREENCHER COMPROVANTE
+            // ==========================================
+
+            document.getElementById(
+                "numeroAgendamento"
+            ).textContent =
+                agendamento.numero;
+
+
+            document.getElementById(
+                "nomeCliente"
+            ).textContent =
+                agendamento.nome;
+
+
+            document.getElementById(
+                "profissional"
+            ).textContent =
+                agendamento.profissional;
+
+
+            document.getElementById(
+                "sexoCliente"
+            ).textContent =
+                agendamento.sexo;
+
+
+            document.getElementById(
+                "listaServicos"
+            ).textContent =
+                agendamento.servicos.join(
+                    ", "
+                );
+
+
+            document.getElementById(
+                "dataAtendimento"
+            ).textContent =
+                agendamento.data;
+
+
+            document.getElementById(
+                "horarioAtendimento"
+            ).textContent =
+                agendamento.horario;
+
+
+            document.getElementById(
+                "valorTotal"
+            ).textContent =
+                agendamento.total.toLocaleString(
+                    "pt-BR",
+                    {
+                        style: "currency",
+                        currency: "BRL"
+                    }
+                );
+
+
+            document.getElementById(
+                "status"
+            ).textContent =
+                agendamento.status;
+
+        }
+
+    </script>
+
+    <script src="js/acessibilidade.js"></script>
+</body>
+
+</html>
