@@ -1,0 +1,32 @@
+
+name: Testes do Salao Estilo
+
+on:
+  push:
+    branches:
+      - teste-deploy
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  verificar-arquivos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo do projeto
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos principais
+        run: |
+          test -f index.html
+          test -f cadastro_agendamento.html
+          test -f comprovante.html
+          test -d css
+          test -d js
+          test -d imagem
+          echo "Arquivos principais encontrados!"
+
+      - name: Confirmar verificacao
+        run: echo "Verificacao concluida com sucesso!"
